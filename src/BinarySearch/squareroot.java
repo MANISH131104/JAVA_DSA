@@ -1,14 +1,15 @@
 package BinarySearch;
+
 import java.util.Scanner;
 
-public class squareRoot {
+public class squareroot {
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        System.out.print("Enter n :");
-        int n= sc.nextInt();
-        int ans= mySqrt(n);
-        System.out.println(ans);
-    }
+    Scanner sc=new Scanner(System.in);
+    System.out.print("Enter n :");
+    int n= sc.nextInt();
+    int ans= mySqrt(n);
+    System.out.println(ans);
+}
     public static int mySqrt(int n) {
         long lo=0,hi=n;
         while(lo<=hi){
