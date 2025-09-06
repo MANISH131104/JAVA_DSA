@@ -12,9 +12,9 @@ public class TakingInput {
 
 
        // String str = "MANISH KUMAR";
-       // System.out.println(str.length());
+       // System.out.println(str.length());      -> 11
 //        char ch = str.charAt(3);
-//        System.out.println(ch);
+//        System.out.println(ch);                  ->I
       //  System.out.println(str.charAt(3));
        // System.out.println(str.indexOf('N'));
        // String gtr = "KESHAV JHA";   // k,l,m   { m is ahead of k by 2 i.e. output is showing positive 2 . }
