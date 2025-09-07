@@ -11,9 +11,9 @@ public class palindrome {
         while(i<=j){
             if(s.charAt(i)==s.charAt(j)) {
                 flag=true;
-                i++;
-                j--;
             }
+            i++;
+            j--;
         }
         if(flag==true){
             System.out.println("malayalam is palindrome");
