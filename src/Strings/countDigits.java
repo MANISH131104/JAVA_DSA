@@ -4,8 +4,13 @@ import java.util.Scanner;
 public class countDigits {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
+//        int n=sc.nextInt();
+//        String s=""+n;
+
+        double n=sc.nextDouble();
         String s=""+n;
         System.out.println(s.length());
+
+
     }
 }
