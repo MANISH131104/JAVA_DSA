@@ -9,7 +9,12 @@ public class concatString {
 
 
 //        a=a.concat(b);
-//        System.out.println(a);            // aisa ho sakta hai
-        System.out.println(a.concat(b));
+//        System.out.println(a);      //aisa ho sakta hai
+      //  System.out.println(a.concat(b));
+
+
+
+        a=a+b;
+        System.out.println(a);
     }
 }
