@@ -20,7 +20,11 @@ public class builder {
 
 
         StringBuilder sb = new StringBuilder("MANISH");
+        System.out.println(sb.length()+" "+sb.capacity());
         System.out.println(sb);
+        String t=sb.toString();
+        System.out.println(t);
+
         sb.reverse();
         System.out.println(sb);
         sb.reverse();
