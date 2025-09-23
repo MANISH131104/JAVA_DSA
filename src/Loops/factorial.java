@@ -11,10 +11,5 @@ public class factorial {
             fact = fact * i;
         }
         System.out.println(fact);
-
-
-
-
-
     }
 }

@@ -16,12 +16,12 @@ public class SpiralMatrix {
         int last_cols=n-1;
         while(first_Row<=last_Row && first_cols<=last_cols){
             // Right
-            for(int j=first_cols;j<last_cols;j++)
+            for(int j=first_cols;j<=last_cols;j++)
                ans.add(arr[first_Row][j]);
             first_Row++;
             if(first_Row>last_Row || first_cols>last_cols) break;
             // Down
-            for(int i=first_Row;i<last_Row;i++)
+            for(int i=first_Row;i<=last_Row;i++)
                 ans.add(arr[i][last_cols]);
             last_cols--;
             if(first_Row>last_Row || first_cols>last_cols) break;
