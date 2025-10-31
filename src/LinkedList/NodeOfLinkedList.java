@@ -1,12 +1,6 @@
 package LinkedList;
 
-class Node{
-    int val;        // 0
-    Node next;      // null
-    Node(int val){
-        this.val = val;
-    }
-}
+
 public class NodeOfLinkedList {
     public static void main(String[] args) {
         // 10->20->30->40->50
