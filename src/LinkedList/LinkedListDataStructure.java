@@ -12,14 +12,38 @@ class Linkedlist{   // user defined data structure
     Node tail;   // null
     int size;
 
+    int search(int val){
+        if(head==null) return -1;
+        Node temp = head;
+        int idx = 0;
+        while(temp != null){
+            if(temp.val==val) return idx;
+            temp = temp.next;
+            idx++;
+        }
+        return -1;
+    }
+
+//    void addAtTail(int val){
+//        Node temp = new Node(val);
+//        if(tail==null) head = tail = temp;
+//        else {
+//            tail.next = temp;
+//            tail = temp;
+//        }
+//        size++;
+//    }
     void addAtTail(int val){
-        Node temp = new Node(val);
-        if(tail==null) head = tail = temp;
-        else {
+        if(tail==null){
+            addAtHead(val);
+            return;
+        }
+        else{
+            Node temp = new Node(val);
             tail.next = temp;
             tail = temp;
+            size++;
         }
-        size++;
     }
     void deleteAtHead(){
         if(head==null){
@@ -72,6 +96,10 @@ public class LinkedListDataStructure {
         ll.display();
 
         System.out.println(ll.size);
+
+        int idx = ll.search(20);
+        System.out.println(idx);
+
 
 
     }
