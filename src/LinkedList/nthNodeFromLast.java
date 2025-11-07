@@ -48,7 +48,7 @@ public class nthNodeFromLast {
         return temp;
     }
 
-    public static Node nthNode2(Node head, int k){
+    public static Node nthNode2(Node head, int k) {
         Node slow = head;
         Node fast = head;
         for (int i = 1; i <= k; i++) {
