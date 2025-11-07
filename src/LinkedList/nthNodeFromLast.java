@@ -1,13 +1,15 @@
 package LinkedList;
 
 public class nthNodeFromLast {
-    public static class Node{
+    public static class Node {
         int data;
         Node next;
-        Node(int data){
+
+        Node(int data) {
             this.data = data;
         }
     }
+
     public static void main(String[] args) {
         Node a = new Node(100);
         Node b = new Node(13);
@@ -24,22 +26,39 @@ public class nthNodeFromLast {
 
         // 100 13 4 5 12 10
 
-        Node temp = nthNode(a,3);
+//        Node temp = nthNode(a, 3);
+//        System.out.println(temp.data);
+
+        Node temp = nthNode2(a, 2);
         System.out.println(temp.data);
 
     }
 
-    private static Node nthNode(Node head, int k){
+    private static Node nthNode(Node head, int k) {
         int length = 0;
         Node temp = head;
-        while(temp != null){
+        while (temp != null) {
             temp = temp.next;
             length++;
         }
         temp = head;
-        for(int i=1; i<=length-k; i++){
+        for (int i = 1; i <= length - k; i++) {
             temp = temp.next;
         }
         return temp;
     }
+
+    public static Node nthNode2(Node head, int k){
+        Node slow = head;
+        Node fast = head;
+        for (int i = 1; i <= k; i++) {
+            fast = fast.next;
+        }
+        while (fast != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow;
+    }
 }
+
