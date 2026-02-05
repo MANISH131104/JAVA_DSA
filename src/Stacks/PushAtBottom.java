@@ -11,6 +11,17 @@ public class PushAtBottom {
         int ele = 50;
         System.out.println(st);
         pushAtBottom(st,ele);
+        System.out.println(st);
+
+        reverse(st);
+        System.out.println(st);
+    }
+
+    private static void reverse(Stack<Integer> st) {
+        if(st.size()<=1) return;
+        int top = st.pop();
+        reverse(st);
+        pushAtBottom(st,top);
     }
 
     private static void pushAtBottom(Stack<Integer> st, int ele) {
