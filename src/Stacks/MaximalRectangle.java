@@ -1,7 +1,7 @@
 package Stacks;
 import java.util.Stack;
 
-public class MaxRectangle {
+public class MaximalRectangle {
     public static int getMaxArea(int arr[]) {
         int n = arr.length;
         int[] nse = new int[n];
