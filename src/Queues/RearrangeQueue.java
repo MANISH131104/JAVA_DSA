@@ -32,7 +32,6 @@ public class RearrangeQueue {
         // }
 
 
-
         // Implemented by Stacks
 
         Stack<Integer> st = new Stack<>();
