@@ -28,12 +28,30 @@ public class Implementation {
         a.right = c;
 
         b.left = d;
-        b.left = e;
+        b.right = e;
 
         c.left = f;
         c.right = g;
 
         display(a);
+        System.out.println();
+        System.out.println(size(a));
+
+        System.out.println(sum(a));
+        System.out.println(product(a));
+    }
+
+    private static int size(Node root) {
+        if(root==null) return 0;
+        return 1+size(root.left)+size(root.right);
+    }
+    private static int sum(Node root) {
+        if(root==null) return 0;
+        return root.val+sum(root.left)+sum(root.right);
+    }
+    private static int product(Node root) {
+        if(root==null) return 1;
+        return root.val*sum(root.left)*sum(root.right);
     }
 
     private static void display(Node root) {
