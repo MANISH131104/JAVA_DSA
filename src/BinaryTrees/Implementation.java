@@ -39,6 +39,8 @@ public class Implementation {
 
         System.out.println(sum(a));
         System.out.println(product(a));
+
+        System.out.println(max(a));
     }
 
     private static int size(Node root) {
@@ -52,6 +54,10 @@ public class Implementation {
     private static int product(Node root) {
         if(root==null) return 1;
         return root.val*sum(root.left)*sum(root.right);
+    }
+    private static int max(Node root) {
+        if(root==null) return Integer.MIN_VALUE;
+        return Math.max(root.val, Math.max(max(root.left),max(root.right)));
     }
 
     private static void display(Node root) {
