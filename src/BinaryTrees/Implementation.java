@@ -33,16 +33,22 @@ public class Implementation {
         c.left = f;
         c.right = g;
 
-        display(a);
+        preorder(a);
         System.out.println();
-        System.out.println(size(a));
+        inorder(a);
+        System.out.println();
+        postorder(a);
 
-        System.out.println(sum(a));
-        System.out.println(product(a));
 
-        System.out.println(max(a));
-
-        System.out.println(levels(a));
+  //      System.out.println();
+//        System.out.println(size(a));
+//
+//        System.out.println(sum(a));
+//        System.out.println(product(a));
+//
+//        System.out.println(max(a));
+//
+//        System.out.println(levels(a));
     }
 
     private static int levels(Node root) {
@@ -52,6 +58,7 @@ public class Implementation {
 
     private static int size(Node root) {
         if(root==null) return 0;
+       // if(root.left==null && root.right==null) return 1;
         return 1+size(root.left)+size(root.right);
     }
     private static int sum(Node root) {
@@ -67,11 +74,22 @@ public class Implementation {
         return Math.max(root.val, Math.max(max(root.left),max(root.right)));
     }
 
-    private static void display(Node root) {
+    private static void preorder(Node root) {
         if(root==null) return;
         System.out.print(root.val+" ");
-        display(root.left);     // left ki sari values print kar dega ye
-        display(root.right);    // right ki sari values print kar dega ye
-
+        preorder(root.left);     // left ki sari values print kar dega ye
+        preorder(root.right);    // right ki sari values print kar dega ye
+    }
+    private static void inorder(Node root){
+        if(root==null) return;
+        inorder(root.left);
+        System.out.print(root.val+" ");
+        inorder(root.right);
+    }
+    private static void postorder(Node root){
+        if(root==null) return;
+        postorder(root.left);
+        postorder(root.right);
+        System.out.print(root.val+" ");
     }
 }
