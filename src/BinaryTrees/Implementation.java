@@ -18,8 +18,34 @@ class Pair{
         this.level = level;
     }
 }
+class Quad{
+    int max;
+    int min;
+    int size;
+    int sum;
+    Quad(int max,int min,int size,int sum){
+        this.max = max;
+        this.min = min;
+        this.size = size;
+        this.sum  = sum;
+    }
+    void display(){
+        System.out.println(max+" "+min+" "+size+" "+sum);
+    }
+        }
+
 
 public class Implementation {
+    public static Quad maxMinSizeSum(Node root){
+        if(root==null) return new Quad(Integer.MIN_VALUE,Integer.MAX_VALUE,0,0);
+        Quad lst = maxMinSizeSum(root.left);
+        Quad rst = maxMinSizeSum(root.right);
+        int max = Math.max(root.val,Math.max(lst.max,rst.max));
+        int min = Math.min(root.val,Math.min(lst.min,rst.min));
+        int size = 1+lst.size+rst.size;
+        int sum = root.val+lst.sum+rst.sum;
+        return new Quad(max,min,size,sum);
+    }
     public static void main(String[] args) {
         //         3
         //        /  \
@@ -45,9 +71,11 @@ public class Implementation {
         c.left = f;
         c.right = g;
 
+   //     kthLevel(a,0, 2);
+
 //          levelOrder(a);
 
-        levelOrderLineWise(a);
+//        levelOrderLineWise(a);
 
 //        preorder(a);
 //        System.out.println();
@@ -65,6 +93,15 @@ public class Implementation {
 //        System.out.println(max(a));
 //
 //        System.out.println(levels(a));
+
+        maxMinSizeSum(a).display();
+    }
+
+    private static void kthLevel(Node root, int level, int k) {
+        if(root==null) return;
+        if(level==k) System.out.print(root.val+" ");
+        kthLevel(root.left, level+1, k);
+        kthLevel(root.right, level+1, k);
     }
 
     private static void levelOrderLineWise(Node root) {
