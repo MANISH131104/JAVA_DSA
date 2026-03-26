@@ -16,7 +16,8 @@ class  Triplet implements Comparable<Triplet>{
     }
 }
 
-public class KClosestPointToOrigin {
+public class
+KClosestPointToOrigin {
     public int[][] kClosest(int[][] points, int k) {
         PriorityQueue<Triplet> pq = new PriorityQueue<>(Collections.reverseOrder());
         for(int[] point: points){
