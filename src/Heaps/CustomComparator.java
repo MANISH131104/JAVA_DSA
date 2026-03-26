@@ -12,7 +12,9 @@ class Student implements Comparable<Student>{
     }
 
     public int compareTo(Student s){
-        return Double.compare(s.cgpa,this.cgpa);
+        if(this.cgpa == s.cgpa)
+            return this.rno - s.rno;
+        return Double.compare(this.cgpa,s.cgpa);
     }
 }
 
