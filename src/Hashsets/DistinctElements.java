@@ -1,4 +1,4 @@
-package Maps_And_Sets;
+package Hashsets;
 import java.util.HashSet;
 
 public class DistinctElements {

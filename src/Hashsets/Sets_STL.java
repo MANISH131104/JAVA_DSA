@@ -1,6 +1,5 @@
-package Maps_And_Sets;
+package Hashsets;
 import java.util.HashSet;
-import java.util.TreeSet;
 
 public class Sets_STL {
     public static void main(String[] args) {
