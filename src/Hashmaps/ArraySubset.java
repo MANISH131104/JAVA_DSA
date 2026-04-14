@@ -11,19 +11,25 @@ public class ArraySubset {
             }
             else aMap.put(ele,1);
         }
-        HashMap<Integer,Integer> bMap = new HashMap<>();
+//        HashMap<Integer,Integer> bMap = new HashMap<>();
+//        for(int ele : b){
+//            if(!aMap.containsKey(ele)) return false;
+//            if(bMap.containsKey(ele)){
+//                int freq = bMap.get(ele);
+//                bMap.put(ele,freq+1);
+//            }
+//            else bMap.put(ele,1);
+//        }
+//        for(int ele : bMap.keySet()){
+//            int freq = bMap.get(ele);
+//            int afreq = aMap.get(ele);
+//            if(afreq<freq) return false;
+//        }
         for(int ele : b){
             if(!aMap.containsKey(ele)) return false;
-            if(bMap.containsKey(ele)){
-                int freq = bMap.get(ele);
-                bMap.put(ele,freq+1);
-            }
-            else bMap.put(ele,1);
-        }
-        for(int ele : bMap.keySet()){
-            int freq = bMap.get(ele);
-            int afreq = aMap.get(ele);
-            if(afreq<freq) return false;
+            int freq = aMap.get(ele);
+            if(freq==0) return false;
+            aMap.put(ele,freq-1);
         }
         return true;
     }
