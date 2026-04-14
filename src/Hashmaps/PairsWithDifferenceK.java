@@ -5,11 +5,12 @@ public class PairsWithDifferenceK {
     int countPairs(int[] arr, int k) {
         HashMap<Integer,Integer> map = new HashMap<>();
         for(int ele : arr){
-            if(!map.containsKey(ele)) map.put(ele,1);
-            else{
-                int freq = map.get(ele);
-                map.put(ele,freq+1);
-            }
+//            if(!map.containsKey(ele)) map.put(ele,1);
+//            else{
+//                int freq = map.get(ele);
+//                map.put(ele,freq+1);
+//            }
+            map.put(ele,map.getOrDefault(ele,0)+1);
         }
         int pairs = 0;
         for(int ele : map.keySet()){
